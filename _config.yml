@@ -24,8 +24,8 @@ description              : ""
 url                      : "https://distroJack.github.io"
 baseurl                  : "/"
 repository               : "distroJack/distroJack.github.io"
-teaser                   : "/assets/images/path.jpeg"
-logo                     : "/assets/images/path.jpeg"
+teaser                   : # "/assets/images/path.jpeg"
+logo                     : # "/assets/images/path.jpeg"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
