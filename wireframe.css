@@ -3140,8 +3140,9 @@ input[type="button"].btn-block {
     border-bottom-left-radius: 0.25rem; }
 
 .card-body {
+  display:block;
   flex: 1 1 auto;
-  padding: 1.25rem; }
+  padding: 1.25rem;}
 
 .card-title {
   margin-bottom: 0.75rem; }
