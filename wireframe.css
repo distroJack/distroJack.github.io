@@ -64,7 +64,7 @@ body {
   font-size: 1rem;
   font-weight: 200;
   line-height: 1.5;
-  color: #333;
+  color: #222;
   text-align: left;
   background-color: white; }
 
@@ -331,7 +331,7 @@ h6, .h6 {
 
 .lead {
   font-size: 1.3rem;
-  font-weight: 300; }
+  font-weight: 400; }
 
 .display-1 {
   font-size: 6rem;
