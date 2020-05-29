@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:export-ydpi="96"
+   inkscape:export-xdpi="96"
+   inkscape:export-filename="C:\Users\Sisyphus\Desktop\jack logo.png"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="jack logo.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1"
+     inkscape:cx="271.6508"
+     inkscape:cy="408.29762"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="1274"
+     inkscape:window-height="1040"
+     inkscape:window-x="2009"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#1a1a1a;fill-opacity:1;stroke-width:0.957826"
+       id="rect1391"
+       width="84.044678"
+       height="124.11093"
+       x="5.4458313"
+       y="43.272636"
+       ry="13.411255" />
+    <rect
+       style="fill:#1a1a1a;fill-rule:evenodd;stroke-width:0.472054"
+       id="rect59"
+       width="157.82092"
+       height="182.85008"
+       x="-202.26801"
+       y="37.976128"
+       transform="matrix(0.22997072,-0.97319755,0.99999997,-2.3691001e-4,0,0)"
+       ry="37.802631"
+       rx="78.910461" />
+    <rect
+       ry="29.132706"
+       transform="matrix(0.23554662,-0.97186305,0.99999094,-0.00425631,0,0)"
+       y="65.445877"
+       x="-183.89774"
+       height="140.91389"
+       width="117.98141"
+       id="rect59-8"
+       style="fill:#333333;fill-rule:evenodd;stroke-width:0.358298" />
+    <rect
+       ry="6.7599411"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       y="75.543999"
+       x="-189.50365"
+       height="32.697609"
+       width="35.569664"
+       id="rect59-2"
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0947671" />
+    <rect
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0947674"
+       id="rect59-2-6"
+       width="35.569664"
+       height="32.697609"
+       x="-189.51704"
+       y="116.55078"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       ry="6.7599411" />
+    <rect
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0947674"
+       id="rect59-2-5"
+       width="35.569664"
+       height="32.697609"
+       x="-140.29039"
+       y="115.18193"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       ry="6.7599411" />
+    <rect
+       ry="6.7599411"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       y="113.81259"
+       x="-91.063271"
+       height="32.697609"
+       width="35.569664"
+       id="rect59-2-5-8"
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0947674" />
+    <rect
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0941805"
+       id="rect59-2-4"
+       width="35.349327"
+       height="32.495068"
+       x="-90.830276"
+       y="73.577263"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       ry="6.7180667" />
+    <rect
+       style="fill:#ff2a2a;fill-rule:evenodd;stroke-width:0.0947674"
+       id="rect59-2-6-7-9"
+       width="35.569664"
+       height="32.697609"
+       x="-92.084862"
+       y="154.45374"
+       transform="matrix(0.18246447,-0.98321245,0.99999995,-3.0166437e-4,0,0)"
+       ry="6.7599411" />
+  </g>
+</svg>
