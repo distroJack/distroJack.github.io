@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script>
+<script type="text/javascript">
+function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+};
+
+function getIp() {
+    var text = "";
+    var host = getUrlParameter("host");
+    if (host == null) {
+    text = host;
+    } else {
+    var data = {
+        host : host
+    };
+
+    $.ajax({
+        type: "GET",
+        url: "https://j4wzlgw3z7.execute-api.us-east-1.amazonaws.com/dev/",
+        dataType: "json",
+        crossDomain: "true",
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify(data),
+        success: function () {
+            // clear form and show a success message
+            alert("Successfull");
+            document.getElementById("contact-form").reset();
+            location.reload();
+        },
+        error: function () {
+            // show an error message
+            alert("UnSuccessfull");
+        }
+    });
+
+    }
+    
+}
+</script>
+
+<body onload=getIp()>
+
+<p id="ssh-ip"></p>
+
+</body>
+</html> 
