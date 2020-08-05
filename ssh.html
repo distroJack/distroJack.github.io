@@ -15,22 +15,16 @@ function getIp() {
     if (host == null) {
     text = host;
     } else {
-    var data = {
-        host : host
-    };
 
     $.ajax({
         type: "GET",
-        url: "https://j4wzlgw3z7.execute-api.us-east-1.amazonaws.com/dev/",
+        url: "https://j4wzlgw3z7.execute-api.us-east-1.amazonaws.com/dev/?host=" + host,
         dataType: "json",
         crossDomain: "true",
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(data),
-        success: function () {
+        success: function (response) {
             // clear form and show a success message
-            alert("Successfull");
-            document.getElementById("contact-form").reset();
-            location.reload();
+            document.getElementById("ssh-ip").innerHTML = JSON.stringify(response.body);
         },
         error: function () {
             // show an error message
