@@ -25,8 +25,10 @@ function getIp() {
         success: function (response) {
             if (response) {
                 var len = response.length;
+                console.log("Length" + len);
                 var html_data = "";
                 if (len > 0) {
+                    console.log("response" + response);
                     for(var i=0; i<len; i++) {
                         if(response[i].host_name && response[i].ip_addr) {
                             html_data += "<tr><td>"+response[i].host_name+"</td><td>"+response[i].ip_addr+"</td></tr>";
