@@ -24,6 +24,7 @@ function getIp() {
         contentType: "application/json; charset=utf-8",
         success: function (response) {
             if (response) {
+                response = JSON.parse(response.body);
                 var len = response.body.length;
                 console.log("Length : " + len);
                 console.log("response body : " + response.body);
