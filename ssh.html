@@ -25,9 +25,9 @@ function getIp() {
         success: function (response) {
             if (response) {
                 response = JSON.parse(response.body);
-                var len = response.body.length;
+                var len = response.length;
                 console.log("Length : " + len);
-                console.log("response body : " + response.body);
+                console.log("response body : " + response);
                 var html_data = "";
                 if (len > 0) {
                     console.log("response" + response);
