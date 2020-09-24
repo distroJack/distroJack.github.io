@@ -24,7 +24,7 @@
 </head>
 
 <body>
-  <div class="navbar navbar-dark bg-dark navbar-fixed-top">
+  <div class="navbar navbar-dark bg-dark">
     <div class="container d-flex justify-content-between">
       <a href="index.html" class="navbar-brand d-flex align-items-center">
         <i class="fas d-inline mr-2 fa-home fa-fw" fa-></i>
@@ -33,10 +33,6 @@
       <a href="project.html" class="navbar-brand d-flex align-items-center">
         <i class="fas d-inline mr-2 fa-project-diagram fa-fw"></i>
         <strong>Projects</strong>
-      </a>
-      <a href="resume.html" class="navbar-brand d-flex align-items-center">
-        <i class="far d-inline mr-2 fa-file fa-fh "></i>
-        <strong>Resume</strong>
       </a>
       <a href="personal.html" class="navbar-brand d-flex align-items-center">
         <i class="fas d-inline mr-2 fa-user"></i>
@@ -50,19 +46,24 @@
         <div class="col-md-9">
           <h1><strong>About Me</strong></h1>
           <p class="lead">
-            Hi, my name is Jack.<br><br>
-            I am a:<br>
-            • Software engineer at <strong><a href="https://www.gtri.gatech.edu/">GTRI</a></strong><br>
-            • <strong><a href="https://www.cc.gatech.edu/">Georgia Tech</a></strong> graduate<br>
-            • Avid puzzle solver
+          <h2> Hi, my name is Jack.<br> </h2>
           </p>
+          <hr>
+          <h2> I previously
+                <a href="https://en.wikipedia.org/wiki/Traditions_of_the_Georgia_Institute_of_Technology#Getting_Out">"got out"</a>
+                of
+                <strong><a href="https://www.cc.gatech.edu/">Georgia Tech</a></strong><br></h2>
+          <hr>
+          <h2> I currently write whatever code they throw at me as a Software engineer at <strong><a href="https://www.gtri.gatech.edu/">GTRI</a></strong><br></h2>
+          <hr>
+          <h2> In the future I aspire to master system architecture, decision theory, and making the perfect hamburger </h2>
         </div>
       </div>
     </div>
   </div>
   <div class="text-center py-1" style="background-color:#ddd;">
     <div class="container">
-      <h1><strong>Projects</strong></h1>
+      <h1><strong>A quick look at what I'm working on...</strong></h1>
     </div>
   </div>
   <div class="py-4 bg-light">
@@ -76,13 +77,69 @@
               </p>
               <p class="card-text text-muted">
                 I started this site to act as a living resume.
-                Through its development I've learned alot about bootstrap, google-analytics, and github sites.
+                Through its development I've learned alot about bootstrap, web-dev, and github sites.
               </p>
             </div>
             <div class="card-footer">
               <a href="https://github.com/distroJack/distroJack.github.io">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
                   <i class="fab d-inline fa-github fa-fw" fa-></i> | View Source
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow h-100">
+            <div class="card-body">
+              <p class="card-text text-center">
+                <strong>Lexington</strong><br>
+              </p>
+              <p class="card-text text-muted">
+                Lexington is my standard toolkit I download as the first step in developing on any new computer.<br>
+                <hr>
+                This includes any configurations I use, helper tools I've developed, and templates.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/distroJack/Lexington">
+                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
+                  <i class="fab d-inline fa-github fa-fw" fa-></i> | View Source
+                </button>
+              </a>
+              <br>
+              <br>
+              <a href="https://distrojack.com/Lexington/">
+                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
+                  <i class="fas d-inline fa-globe-americas fa-fw" fa-></i> | View Documentation
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 p-3">
+          <div class="card box-shadow h-100">
+            <div class="card-body">
+              <p class="card-text text-center">
+                <strong>Galway</strong><br>
+              </p>
+              <p class="card-text text-muted">
+                Galway a set of miscellaneous problem, solution pairs I've encountered.<br>
+                <hr>
+                All kinds of topics covered.
+              </p>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/distroJack/Galway">
+                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
+                  <i class="fab d-inline fa-github fa-fw" fa-></i> | View Source
+                </button>
+              </a>
+              <br>
+              <br>
+              <a href="https://distrojack.com/Galway/">
+                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
+                  <i class="fas d-inline fa-globe-americas fa-fw" fa-></i> | View Documentation
                 </button>
               </a>
             </div>
@@ -158,7 +215,7 @@
                 <strong>Dotum</strong><br>
               </p>
               <p class="card-text text-muted">
-                Standard build system to roll out future projects with<br>
+                Standard build system to roll out future projects with.<br>
                 <hr>
                 Written in Python. Encompases several AWS services (S3, Lambdam, IAM).
               </p>
@@ -167,81 +224,6 @@
               <a href="mailto:jack.humphries@distrojack.com">
                 <button type="button" class="btn btn-sm btn-outline-secondary">
                   <i class="fas d-inline fa-envelope fa-fw" fa-></i> | Request More Info
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow h-100"> 
-            <div class="card-body">
-              <p class="card-text text-center">
-                <strong>Lexington</strong><br>
-              </p>
-              <p class="card-text text-muted">
-                Lexington's is my standard toolkit I download as the first step in developing on any new computer.<br>
-                This includes any configurations I use, helper tools I've developed, and templates.
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="mailto:jack.humphries@distrojack.com">
-                <div class="btn-group" role="group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">
-                    <i class="fas d-inline fa-envelope fa-fw" fa-></i>
-                  </button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary"> 
-                    Request More Info
-                  </button>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow h-100">
-            <div class="card-body">
-              <p class="card-text text-center">
-                <strong>Lexington</strong><br>
-              </p>
-              <p class="card-text text-muted">
-                Lexington is my standard toolkit I download as the first step in developing on any new computer.<br>
-                This includes any configurations I use, helper tools I've developed, and templates.
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="https://github.com/distroJack/Galway">
-                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
-                  <i class="fab d-inline fa-github fa-fw" fa-></i> | View Source
-                </button>
-              </a>
-              <a href="https://distrojack.com/Galway/">
-                <button type="button" class="btn btn-sm btn-outline-secondary float-right">
-                  <i class="fas d-inline fa-globe-americas fa-fw" fa-></i> | View Documentation
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 p-3">
-          <div class="card box-shadow h-100">
-            <div class="card-body">
-              <p class="card-text text-center">
-                <strong>Galway</strong><br>
-              </p>
-              <p class="card-text text-muted">
-                Galway a set of miscellaneous problem, solution pairs I've encountered.<br>
-                All topics covered.
-              </p>
-            </div>
-            <div class="card-footer">
-              <a href="https://github.com/distroJack/Galway">
-                <button type="button" class="btn btn-sm btn-outline-secondary float-left">
-                  <i class="fab d-inline fa-github fa-fw" fa-></i> | View Source
-                </button>
-              </a>
-              <a href="https://distrojack.com/Galway/">
-                <button type="button" class="btn btn-sm btn-outline-secondary float-right">
-                  <i class="fas d-inline fa-globe-americas fa-fw" fa-></i> | View Documentation
                 </button>
               </a>
             </div>
@@ -258,7 +240,7 @@
       </a>
     </div>
     <div class="container d-flex justify-content-center">
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
+      <a href="https://www.linkedin.com/in/jonathon-humphries-127642114" class="navbar-brand d-flex align-items-center">
         <i class="fab d-inline mr-2 fa-linkedin fa-fw" fa-></i> <strong>Linkedin</strong>
       </a>
       <a href="https://github.com/distroJack" class="navbar-brand d-flex align-items-center">
