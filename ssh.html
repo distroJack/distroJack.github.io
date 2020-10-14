@@ -23,8 +23,21 @@ function getIp() {
         crossDomain: "true",
         contentType: "application/json; charset=utf-8",
         success: function (response) {
-            // clear form and show a success message
-            document.getElementById("ssh-ip").innerHTML = JSON.stringify(response.body);
+            if (response) {
+                response = JSON.parse(response.body);
+                var len = response.length;
+                var html_data = "";
+                if (len > 0) {
+                    for(var i=0; i<len; i++) {
+                        if(response[i].host_name && response[i].ip_addr) {
+                            html_data += "<tr><td>"+response[i].host_name+"</td><td>"+response[i].ip_addr+"</td></tr>";
+                        }
+                    }
+                }
+                if (html_data != "") {
+                    $("#ssh-ip").append(html_data).removeClass("hidden");
+                }
+            }
         },
         error: function () {
             // show an error message
@@ -39,7 +52,12 @@ function getIp() {
 
 <body onload=getIp()>
 
-<p id="ssh-ip"></p>
+<table id="ssh-ip" class="hidden">
+    <tr>
+        <th>Host</th>
+        <th>IP ADDR</th>
+    </tr>
+</table>
 
 </body>
 </html> 
