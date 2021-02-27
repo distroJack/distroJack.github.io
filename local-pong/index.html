@@ -1,0 +1,68 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ball Bounce</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <canvas>
+
+    </canvas>
+
+    <script src="board.js"></script>
+    <script src="ball.js"></script>
+    <script src="paddle.js"></script>
+    <script type="text/javascript">
+
+        alert("P1 use w & s keys | P2 use up & down arrows ");
+
+        var context = document.querySelector("canvas").getContext("2d");
+
+        width = document.documentElement.clientWidth;
+        height = document.documentElement.clientHeight;
+
+        var board = new Board(width, height);
+
+        // Start the puck at ball at half court
+        var radius = 25;
+        var ball = new Ball(width / 2.0, height / 2.0, radius);
+
+        var paddleWidth = 20;
+        var paddleHeight = 150;
+        var left = new Paddle(0, height, paddleWidth, paddleHeight, "ArrowUp", "ArrowDown");
+        var right = new Paddle(width, height, paddleWidth, paddleHeight, "KeyW", "KeyS");
+
+        function loop() {
+
+            window.requestAnimationFrame(loop);
+
+            context.canvas.width = document.documentElement.clientWidth;
+            context.canvas.height = document.documentElement.clientHeight;
+
+            width = context.canvas.width;
+            height = context.canvas.height;
+
+            board.update(width, height);
+
+            left.updatePosition(width, height);
+            right.updatePosition(width, height);
+            ball.updatePosition(width, height, left, right, board);
+
+            left.draw(context);
+            right.draw(context);
+            ball.draw(context);
+            board.draw(context);
+
+        }
+
+        loop(); 
+    </script>
+
+</body>
+
+</html>
