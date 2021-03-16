@@ -29,7 +29,7 @@ Ball.prototype = {
         // Has either player scored
         if (this.x - this.radius < 0) {
             board.score_right();
-            this.last = Math.PI;
+            this.last = 2 * Math.PI;
             this.reset(width, height);
         } else if (this.x + this.radius > width) {
             board.score_left();
