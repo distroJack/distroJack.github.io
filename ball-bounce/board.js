@@ -3,6 +3,8 @@ const Board = function (width, height) {
     this.width = width;
     this.height = height;
 
+    console.log(width);
+    console.log(height);
     this.lscore = 0;
     this.rscore = 0;
 
@@ -10,26 +12,18 @@ const Board = function (width, height) {
 
 Board.prototype = {
 
-    update: function(width, height) { 
-        this.width = width;
-        this.height = height;
-    },
-
-    score_left: function() { 
-        this.lscore++;
-    },
-
-    score_right: function() { 
-        this.rscore++;
+    update: function(backendPlayer1, backendPlayer2) { 
+        this.lscore = backendPlayer1.score;
+        this.rscore = backendPlayer2.score;
     },
 
     draw: function(context) {
-        context.fillStyle = "#444444";
+        context.fillStyle = "#cccccc";
         context.beginPath();
         context.fillRect(this.width/2.0 - 2.5, 0, 5, this.height);
-        context.font = "40px Arial";
-        context.fillText(this.lscore, this.width/4, this.height/10);
-        context.fillText(this.rscore, this.width * (3/4), this.height/10);
+        context.font = "30px Arial";
+        context.fillText("Player 1 : " + this.lscore, this.width/7, this.height/10);
+        context.fillText("Player 2 : " + this.rscore, this.width * (19/28), this.height/10);
     }
 
 }
