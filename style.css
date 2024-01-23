@@ -19,7 +19,7 @@ body {
     /* bookends a double dose of gradient 1 color to allow for animation to loop without jaring gradient jumps */
     background: linear-gradient(var(--g1), var(--g2), var(--g3), var(--g4), var(--g5));
     background-size: 800% 800%;
-    animation: bg-gradient 1s ease infinite;
+    animation: bg-gradient 15s ease infinite;
     /* color: whitesmoke; */
 }
 
