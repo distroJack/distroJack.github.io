@@ -1,0 +1,62 @@
+name: ci
+
+on:
+  workflow_dispatch:
+  pull_request:
+  workflow_call:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Check if things should be skipped.
+  nogo-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - name: Check if this action should be skipped
+        id: skip_check
+        uses: fkirc/skip-duplicate-actions@v5.2.0
+        with:
+          skip_after_successful_duplicate: 'true'
+          paths: '[
+            ".github/workflows/**",
+            "src/**",
+            "routes/**",
+            "styles/**",
+            "types/**",
+            "static/**",
+            "package.json",
+            "package-lock.json"
+          ]'
+          do_not_skip: '["workflow_dispatch"]'
+
+  ci:
+    name: 'CI'
+    needs: nogo-check
+    if: ${{ needs.nogo-check.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - name: Run NPM install
+        run: |
+          npm install
+
+      - name: Lint site
+        run: |
+          npm run lint
+
+      - name: Test building site
+        run: |
+          npm run build

@@ -28,8 +28,14 @@ jobs:
           ]'
           do_not_skip: '["workflow_dispatch"]'
 
+  ci:
+    needs: nogo-check
+    if: ${{ needs.pre-job.outputs.should_skip != 'true' }}
+    uses: ./.github/workflows/ci.yml
+
+
   build-and-deploy:
-    needs: [nogo-check]
+    needs: [ci, nogo-check]
     if: ${{ needs.nogo-check.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
     steps:
