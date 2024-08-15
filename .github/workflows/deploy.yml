@@ -24,7 +24,6 @@ jobs:
     if: ${{ needs.pre-job.outputs.should_skip != 'true' }}
     uses: ./.github/workflows/ci.yml
 
-
   build-and-deploy:
     needs: [ci, nogo-check]
     if: ${{ needs.nogo-check.outputs.should_skip != 'true' }}
