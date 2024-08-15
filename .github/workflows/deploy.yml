@@ -16,16 +16,7 @@ jobs:
         uses: fkirc/skip-duplicate-actions@v5.2.0
         with:
           skip_after_successful_duplicate: 'true'
-          paths: '[
-            ".github/workflows/**", 
-            "src/**", 
-            "routes/**", 
-            "styles/**", 
-            "types/**", 
-            "static/**", 
-            "package.json", 
-            "package-lock.json"
-          ]'
+          paths: '[".github/workflows/**", "src/**", "routes/**", "styles/**", "types/**", "static/**", "package.json", "package-lock.json"]'
           do_not_skip: '["workflow_dispatch"]'
 
   ci:
