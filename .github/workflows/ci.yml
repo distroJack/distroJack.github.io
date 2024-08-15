@@ -11,14 +11,14 @@ concurrency:
 
 jobs:
   # Check if things should be skipped.
-  nogo-check:
+  pre-job:
     runs-on: ubuntu-latest
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
     steps:
       - name: Check if this action should be skipped
         id: skip_check
-        uses: fkirc/skip-duplicate-actions@v5.2.0
+        uses: fkirc/skip-duplicate-actions@f11521568414503656a5af807dc3018c012552c4 # v5.2.0
         with:
           skip_after_successful_duplicate: 'true'
           paths: '[".github/workflows/**", "src/**", "routes/**", "styles/**", "types/**", "static/**", "package.json", "package-lock.json"]'
@@ -26,8 +26,8 @@ jobs:
 
   ci:
     name: 'CI'
-    needs: nogo-check
-    if: ${{ needs.nogo-check.outputs.should_skip != 'true' }}
+    needs: pre-job
+    if: ${{ needs.pre-job.outputs.should_skip != 'true' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -38,7 +38,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: Run NPM install
         run: |
