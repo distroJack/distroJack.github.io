@@ -1,0 +1,52 @@
+name: Build and Deploy
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  nogo-check:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - name: Check if this action should be skipped
+        id: skip_check
+        uses: fkirc/skip-duplicate-actions@v5.2.0
+        with:
+          skip_after_successful_duplicate: 'true'
+          paths: '[
+            ".github/workflows/**", 
+            "src/**", 
+            "routes/**", 
+            "styles/**", 
+            "types/**", 
+            "static/**", 
+            "package.json", 
+            "package-lock.json"
+          ]'
+          do_not_skip: '["workflow_dispatch"]'
+
+  build-and-deploy:
+    needs: [nogo-check]
+    if: ${{ needs.nogo-check.outputs.should_skip != 'true' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.0.0
+        with:
+          fetch-depth: 1
+
+      - name: npm install and build
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/master'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
