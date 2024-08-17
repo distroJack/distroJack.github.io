@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let emoji: String;
+	let emoji: string;
 
 	onMount(() => {
 		let icons = [
