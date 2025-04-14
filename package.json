@@ -13,7 +13,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"postbuild": "cp CNAME dist/"
+		"postbuild": "cp CNAME build/"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
