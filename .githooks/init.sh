@@ -1,1 +1,1 @@
-git config --local core.hooksPath .githooks/
+git config --local core.hooksPath .githooks
