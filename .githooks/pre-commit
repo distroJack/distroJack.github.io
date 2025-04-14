@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# Git hook to run format and append the formatted code to the commit
+# Git hook to run format and block commit if linting fails
 
 npm run lint 
 if [ $? -eq 0 ]
 then 
-    echo "code format acceptable, commiting"
+    echo "✅ Code format acceptable, committing."
 else
-    echo "RUN 'npm run format' to fix commit error"
+    echo "❌ Lint failed. RUN 'npm run format' to fix commit error"
     exit 1
 fi
