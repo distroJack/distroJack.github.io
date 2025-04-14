@@ -10,7 +10,6 @@
 
 3. Run `npm install` to install all packages for the svelt
 
-
 # Build/Run locally
 
 `npm run build` or `npm run dev`
