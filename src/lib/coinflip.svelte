@@ -1,8 +1,8 @@
 <script>
 	let isFlipping = false;
-	let coinSide = '/heads.png';
-	const heads = '/heads.png';
-	const tails = '/tails.png';
+	let coinSide = '/heads.svg';
+	const heads = '/heads.svg';
+	const tails = '/tails.svg';
 
 	function sleep(ms) {
 		return new Promise((resolve) => setTimeout(resolve, ms));
