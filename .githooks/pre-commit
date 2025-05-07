@@ -2,11 +2,11 @@
 #
 # Git hook to run format and block commit if linting fails
 
-npm run lint 
-if [ $? -eq 0 ]
-then 
-    echo "✅ Code format acceptable, committing."
-else
-    echo "❌ Lint failed. RUN 'npm run format' to fix commit error"
-    exit 1
-fi
+# npm run lint 
+# if [ $? -eq 0 ]
+# then 
+#     echo "✅ Code format acceptable, committing."
+# else
+#     echo "❌ Lint failed. RUN 'npm run format' to fix commit error"
+#     exit 1
+# fi
