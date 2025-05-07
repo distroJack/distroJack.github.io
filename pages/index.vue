@@ -7,16 +7,16 @@
       class="coin-link"
       :style="{
         backgroundImage: `url(${coinFace})`,
-        top: `${top}px`,
-        left: `${left}px`
+        top: `${position.top}px`,
+        left: `${position.left}px`
       }"
     />
   </div>
 </template>
 
 
-<script setup>
-// pages/my-cool-page.vue or app.vue
+<script setup lang="ts">
+
 import { ref, onMounted } from 'vue'
 
 useHead({
@@ -26,21 +26,43 @@ useHead({
 })
 
 const coinFace = ref('/heads.svg')
-const top = ref(0)
-const left = ref(0)
+
 const isReady = ref(false)
+const position = ref({ top: 0, left: 0 })
+
+let vx = 0 // horizontal velocity
+let vy = -2 // vertical velocity
 
 onMounted(() => {
   coinFace.value = Math.random() < 0.5 ? '/heads.svg' : '/tails.svg'
 
-  const maxTop = window.innerHeight - 120
-  const maxLeft = window.innerWidth - 120
+  vx = Math.random() - 0.5 * 4 // random between -2 and +2
 
-  top.value = Math.floor(Math.random() * maxTop)
-  left.value = Math.floor(Math.random() * maxLeft)
+  const startLeft = Math.floor(Math.random() * (window.innerWidth - 120))
+  position.value.left = startLeft
+  position.value.top = 0
+  isReady.value = true
 
-  isReady.value = true // only show coin once it's positioned
+  requestAnimationFrame(animateFall);
 })
+
+function animateFall() {
+  
+  let new_left = position.value.left + vx;
+  console.log(new_left)
+  if ((new_left > 20) && (new_left < window.innerWidth - 120)) {
+    position.value.left = new_left
+  } else {
+    vx *= -1
+  }
+  
+  // Stop if it's hit the bottom
+  position.value.top += vy
+  vy += 0.03
+  if (position.value.top < window.innerHeight - 140) {
+    requestAnimationFrame(animateFall)
+  }
+}
 </script>
 
 <style scoped lang="scss">
