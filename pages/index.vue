@@ -1,16 +1,50 @@
 <template>
   <div class="center">
     <h1><span class="look">Look</span> <span class="at">at</span> <span class="the">the</span> <span class="pretty">pretty</span> <span class="colors">colors</span></h1>
+    <NuxtLink
+      v-if="isReady"
+      to="/coinflip"
+      class="coin-link"
+      :style="{
+        backgroundImage: `url(${coinFace})`,
+        top: `${top}px`,
+        left: `${left}px`
+      }"
+    />
   </div>
 </template>
 
-<script setup lang="ts">
-// No special logic needed
+
+<script setup>
+// pages/my-cool-page.vue or app.vue
+import { ref, onMounted } from 'vue'
+
+useHead({
+  bodyAttrs: {
+    class: 'index-body'
+  }
+})
+
+const coinFace = ref('/heads.svg')
+const top = ref(0)
+const left = ref(0)
+const isReady = ref(false)
+
+onMounted(() => {
+  coinFace.value = Math.random() < 0.5 ? '/heads.svg' : '/tails.svg'
+
+  const maxTop = window.innerHeight - 120
+  const maxLeft = window.innerWidth - 120
+
+  top.value = Math.floor(Math.random() * maxTop)
+  left.value = Math.floor(Math.random() * maxLeft)
+
+  isReady.value = true // only show coin once it's positioned
+})
 </script>
 
 <style scoped lang="scss">
-:global(html),
-:global(body) {
+:global(.index-body) {
   height: 100%;
   overflow: hidden;
   margin: 0;
@@ -81,5 +115,25 @@ div .center {
   min-height: 100vh;
   vertical-align: middle;
   margin-top: -5%;
+}
+
+.coin-link {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: goldenrod;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+  margin-top: 2rem;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.coin-link:hover {
+  transform: scale(1.1);
 }
 </style>
