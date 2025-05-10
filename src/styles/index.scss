@@ -12,7 +12,7 @@ html {
 	--g5: #e9ff70;
 }
 
-body {
+.main-body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -45,26 +45,6 @@ div {
 	font-size: 70px;
 }
 
-.look {
-	color: var(--g1);
-}
-
-.at {
-	color: var(--g2);
-}
-
-.the {
-	color: var(--g3);
-}
-
-.pretty {
-	color: var(--g4);
-}
-
-.colors {
-	color: var(--g5);
-}
-
 .spacers {
 	margin: 10px;
 }
@@ -77,4 +57,28 @@ div .center {
 	min-height: 100vh;
 	vertical-align: middle;
 	margin-top: -5%;
+}
+
+.coin-link {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	background-color: goldenrod;
+	background-size: 150%;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	display: inline-block;
+	transition: transform 0.3s ease;
+	z-index: 999;
+}
+
+.coin-link:hover {
+	transform: scale(1.1);
+}
+
+.center {
+	text-align: center;
+	padding-top: 2rem;
 }
