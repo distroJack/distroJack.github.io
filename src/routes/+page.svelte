@@ -8,8 +8,7 @@
 	let speed = { x: 0, y: 0 };
 
 	onMount(() => {
-		// document.body.className = 'index-body';
-
+		document.body.classList.add('index-body');
 		coinFace = Math.random() < 0.5 ? '/heads.svg' : 'tails.svg';
 		speed.x = (Math.random() - 0.5) * 4; // random between -2 and +2
 
@@ -41,13 +40,13 @@
 	}
 </script>
 
-<body class="main-body">
-	{#if isReady}
+{#if isReady}
+	<div class="index-div">
 		<a
 			href="/coinflip"
 			class="coin-link"
 			style="top: {position.top}px; left: {position.left}px; background-image: url({coinFace});"
 		>
 		</a>
-	{/if}
-</body>
+	</div>
+{/if}
