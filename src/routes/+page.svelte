@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import '../styles/index.scss';
 
 	let isReady = false;
@@ -18,6 +18,10 @@
 		isReady = true;
 
 		requestAnimationFrame(animateFall);
+	});
+
+	onDestroy(() => {
+		document.body.classList.remove('index-body');
 	});
 
 	function animateFall() {

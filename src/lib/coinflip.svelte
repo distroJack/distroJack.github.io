@@ -1,5 +1,5 @@
 <script>
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import '../styles/coinflip.scss';
 
 	let isFlipping = false;
@@ -17,11 +17,15 @@
 	}
 
 	onMount(() => {
-		document.body.classList.add('coinflip-body');
+		document.body.classList = 'coinflip-body';
 		const saved = localStorage.getItem('longestStreak');
 		if (saved) {
 			longestStreak = parseInt(saved);
 		}
+	});
+
+	onDestroy(() => {
+		document.body.classList.remove('coinflip-body');
 	});
 
 	async function flipMultipleTimes(times = 10, delay = 400) {
