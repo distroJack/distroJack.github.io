@@ -6,6 +6,7 @@
 	let coinFace = '/heads.svg';
 	let position = { top: 0, left: 0 };
 	let speed = { x: 0, y: 0 };
+	let vals = { g: 10, dt: 0.02, res: 0.8 };
 
 	onMount(() => {
 		document.body.classList.add('index-body');
@@ -25,22 +26,24 @@
 	});
 
 	function animateFall() {
+		speed.y += vals.g * vals.dt;
+		console.log('Speed is : ', speed.y);
+
+		let leftPadding = 10;
+		let rightPadding = 100;
 		let newLeft = position.left + speed.x;
-		if (newLeft > 20 && newLeft < window.innerWidth - 120) {
-			position.left = newLeft;
-		} else {
+		if (newLeft < leftPadding || newLeft > window.innerWidth - rightPadding) {
 			speed.x *= -1;
 		}
+		position.left = newLeft;
+		position.top += speed.y * vals.dt;
 
-		position.top += speed.y;
-		speed.y += 0.03;
-
-		if (position.top < window.innerHeight - 150) {
-			requestAnimationFrame(animateFall);
-		} else {
-			speed.y = -2;
-			requestAnimationFrame(animateFall);
+		let lowerPadding = 100;
+		if (position.top >= window.innerHeight - lowerPadding) {
+			speed.y *= -vals.res; // reverse and dampen the velocity
+			speed.x *= vals.res;
 		}
+		requestAnimationFrame(animateFall);
 	}
 </script>
 
